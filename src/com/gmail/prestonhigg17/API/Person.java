@@ -17,4 +17,34 @@ public class Person
         return lastName;
     }
 
+    public void setFirstName(String firstName)
+    {
+        this.firstName = firstName;
+    }
+
+    public String getFirstName()
+    {
+        return firstName;
+    }
+
+    public void setMother(String mother)
+    {
+        this.mother = mother;
+    }
+
+    public String getMother()
+    {
+        return mother;
+    }
+
+    public void setFather(String father)
+    {
+        this.father = father;
+    }
+
+    public String getFather()
+    {
+        return father;
+    }
+
 }

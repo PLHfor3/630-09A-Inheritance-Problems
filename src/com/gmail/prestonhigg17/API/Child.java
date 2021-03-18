@@ -19,7 +19,11 @@ public class Child extends Person
 
     public String toString()
     {
-        return "";
+        return "Child's Name: " + getFirstName() + " " + getLastName() +
+                "\nChild's Mother: " + getMother() +
+                "\nChild's Father: " + getFather() +
+                "\nChild's Age" + age
+                ;
     }
 
 }
