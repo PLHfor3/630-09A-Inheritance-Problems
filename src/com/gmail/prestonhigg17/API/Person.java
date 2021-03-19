@@ -47,4 +47,9 @@ public class Person
         return father;
     }
 
+    public String toString()
+    {
+        return "testing";
+    }
+
 }
