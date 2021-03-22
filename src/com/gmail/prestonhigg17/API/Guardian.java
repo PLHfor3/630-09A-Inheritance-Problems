@@ -27,6 +27,8 @@ public class Guardian extends Person
 
     public String toString()
     {
-        return "test";
+        return "Guardian's Name: " + getFirstName() + " " + getLastName() +
+                "\nRelationship to Child: " + relationshipToChild +
+                "\nGuardian's phone number: " + phoneNumber + "\n";
     }
 }

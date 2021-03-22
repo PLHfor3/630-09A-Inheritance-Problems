@@ -27,12 +27,36 @@ public class Child extends Person
         return age;
     }
 
+    public void setHeight(int height)
+    {
+        this.height = height;
+    }
+
+    public int getHeight()
+    {
+        return height;
+    }
+
+    public void setWeight(double weight)
+    {
+        this.weight = weight;
+    }
+
+    public double getWeight()
+    {
+        return weight;
+    }
+
     public String toString()
     {
         return "Child's Name: " + getFirstName() + " " + getLastName() +
                 "\nChild's Mother: " + getMother() +
                 "\nChild's Father: " + getFather() +
-                "\nChild's Age" + age
+                "\nChild's Guardian: " + guardian +
+                "\nChild's Age: " + age +
+                "\nChild's Weight: " + weight + " lbs" +
+                "\nChild's Height: " + height + " inches" +
+                "\n"
                 ;
     }
 

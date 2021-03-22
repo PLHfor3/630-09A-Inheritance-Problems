@@ -49,7 +49,9 @@ public class Person
 
     public String toString()
     {
-        return "testing";
+        return "Name: " + firstName + " " + lastName +
+                "\nMother: " + mother +
+                "\nFather: " + father + "\n";
     }
 
 }
