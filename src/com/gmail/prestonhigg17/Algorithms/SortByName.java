@@ -1,6 +1,6 @@
 package com.gmail.prestonhigg17.Algorithms;
 
-import com.gmail.prestonhigg17.API.Person;
+import com.gmail.prestonhigg17.ProblemOne.API.Person;
 
 import java.util.ArrayList;
 
