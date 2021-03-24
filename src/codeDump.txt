@@ -1,0 +1,19 @@
+public storageSystem(String name, boolean isThereStock)
+    {
+        this.names = name;
+        this.isThereStock = isThereStock;
+    }
+
+class storageSystem
+{
+    private String names;
+    private boolean isThereStock;
+
+    public storageSystem(String name, boolean isThereStock)
+    {
+        this.names = name;
+        this.isThereStock = isThereStock;
+    }
+
+
+}
