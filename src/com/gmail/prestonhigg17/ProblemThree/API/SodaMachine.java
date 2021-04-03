@@ -39,4 +39,9 @@ public class SodaMachine extends VendingMachine
     {
         price[index][0] = doublePrice;
     }
+
+    public String[] getSodaNames()
+    {
+        return sodaNames;
+    }
 }

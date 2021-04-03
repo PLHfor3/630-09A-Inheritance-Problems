@@ -6,6 +6,20 @@ public class CandyMachine extends VendingMachine
     private Integer[][] isThereStock = new Integer[9][1];
     private double price[][] = new double[9][1];
 
+    public CandyMachine()
+    {
+        for (int index = 0; index < isThereStock.length; index++)
+        {
+            isThereStock[index][0] = 9;
+            price[index][0] = 1.00;
+        }
+    }
+
+    public int getstock(int index)
+    {
+        return isThereStock[index][0];
+    }
+
     public void addStock(int index, int amountOfStockToAdd)
     {
         if ((isThereStock[index][0] + amountOfStockToAdd) <= 9 && amountOfStockToAdd >= 0)
@@ -24,6 +38,45 @@ public class CandyMachine extends VendingMachine
         }
     }
 
+    public boolean buy(int index)
+    {
+        if (isThereStock[index][0] > 0)
+        {
+            isThereStock[index][0] -= 1;
+            return true;
+        }
+        return false;
+    }
+
+    public void setPrice(double priceW, int index)
+    {
+        price[index][0] = priceW;
+    }
+
+    public double getPrice(int index)
+    {
+        return price[index][0];
+    }
+
+    public double[] getPrices()
+    {
+        double[] prices = new double[price.length];
+        for (int index = 0; index < price.length; index++)
+        {
+            prices[index] = price[index][0];
+        }
+        return prices;
+    }
+
+    public String[] getCandyNames()
+    {
+        return candyNames;
+    }
+
+    public String getCandyName(int index)
+    {
+        return candyNames[index];
+    }
 
     public void printTest()
     {
