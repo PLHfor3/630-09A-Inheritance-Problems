@@ -13,8 +13,5 @@ public class Main
         ProblemOne runOne = new ProblemOne();
         ProblemTwo problemTwo = new ProblemTwo();
         SnackBar bar = new SnackBar();
-        //runOne.problemOne();
-        //bar.run();
-        problemTwo.problemTwo();
     }
 }
