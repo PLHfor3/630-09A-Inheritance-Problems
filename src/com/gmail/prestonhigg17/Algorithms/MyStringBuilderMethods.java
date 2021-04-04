@@ -37,13 +37,29 @@ public class MyStringBuilderMethods
         return index;
     }
 
-    public String doubleArrayToString(double[] convertString)
+    public String doubleArrayToString(double[] convertString, String label, boolean labelBeforeOrAfter) // boolean decides if label is before or after value
     {
-        String returningString = "$" + Double.toString(convertString[0]);
+        String returningString;
+
+        if (labelBeforeOrAfter)
+        {
+            returningString = label + Double.toString(convertString[0]);
+        } else
+        {
+            returningString = Double.toString(convertString[0]) + label;
+        }
+
 
         for (int index = 1; index < convertString.length; index++)
         {
-            returningString = returningString + " - $" + Double.toString(convertString[index]);
+            if (labelBeforeOrAfter)
+            {
+                returningString = returningString + " - " + label + Double.toString(convertString[index]);
+            } else
+            {
+                returningString = returningString + " - " + Double.toString(convertString[index]) + label;
+            }
+
         }
         return returningString;
     }

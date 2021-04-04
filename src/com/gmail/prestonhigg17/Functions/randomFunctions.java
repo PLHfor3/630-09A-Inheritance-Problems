@@ -1,6 +1,6 @@
 package com.gmail.prestonhigg17.Functions;
 
-public class misc
+public class randomFunctions
 {
     public static void pressEnterToContinue()
     {

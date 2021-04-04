@@ -11,6 +11,6 @@ public class Main
         SnackBar bar = new SnackBar();
         //Executer.problemOne();
         //bar.run();
-        bar.runCandyMachine();
+        bar.run();
     }
 }
