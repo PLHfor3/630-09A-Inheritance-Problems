@@ -23,9 +23,9 @@ public class randomFunctions
         }
     }
 
-    public static void waitInSeconds(int seconds)
+    public static void waitInSeconds(double seconds)
     {
-        int time = seconds * 1000;
+        int time = (int) (seconds * 1000);
         try
         {
             Thread.sleep(time);
@@ -33,5 +33,41 @@ public class randomFunctions
         {
             Thread.currentThread().interrupt();
         }
+    }
+
+    public static void shutdownSequence()
+    {
+        System.out.print("S");
+        waitInSeconds(0.2);
+        System.out.print("h");
+        waitInSeconds(0.2);
+        System.out.print("u");
+        waitInSeconds(0.2);
+        System.out.print("t");
+        waitInSeconds(0.2);
+        System.out.print("t");
+        waitInSeconds(0.2);
+        System.out.print("i");
+        waitInSeconds(0.2);
+        System.out.print("n");
+        waitInSeconds(0.2);
+        System.out.print("g");
+        waitInSeconds(0.2);
+        System.out.print(" ");
+        waitInSeconds(0.2);
+        System.out.print("D");
+        waitInSeconds(0.2);
+        System.out.print("o");
+        waitInSeconds(0.2);
+        System.out.print("w");
+        waitInSeconds(0.2);
+        System.out.print("n");
+        waitInSeconds(0.5);
+        System.out.print(".");
+        waitInSeconds(0.5);
+        System.out.print(".");
+        waitInSeconds(0.5);
+        System.out.print(".");
+        waitInSeconds(1);
     }
 }
