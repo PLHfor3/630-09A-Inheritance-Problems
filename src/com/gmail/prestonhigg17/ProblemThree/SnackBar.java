@@ -26,7 +26,7 @@ public class SnackBar
     {
         clearTypingSpace();
         System.out.print("Please select a machine. Available Types are Candy, Soda, and Snack (or type exit to exit, this may need to be typed twice): ");
-        String scannerString = scan.next();
+        String scannerString = scan.next().trim();
         if (scannerString.equalsIgnoreCase("candy") || scannerString.equalsIgnoreCase("soda") || scannerString.equalsIgnoreCase("snack") || scannerString.equalsIgnoreCase("manager") || scannerString.equalsIgnoreCase("exit"))
         {
             if (scannerString.equalsIgnoreCase("exit"))
@@ -45,7 +45,7 @@ public class SnackBar
             {
                 clearTypingSpace();
                 System.out.println("Please enter the admin password: ");
-                String passwordInput = scan.next();
+                String passwordInput = scan.next().trim();
                 if (passwordInput.equals(password))
                 {
                     manager();
@@ -81,7 +81,7 @@ public class SnackBar
          *  If false label will be placed after value */
         System.out.println(stringBuilder.doubleArrayToString(candyMachine.getPrices(), "$", true));
         System.out.print(" > ");
-        String scannerString = scan.next();
+        String scannerString = scan.next().trim();
 
         if (scannerString.equalsIgnoreCase("exit"))
         {
@@ -95,23 +95,22 @@ public class SnackBar
             String nameOfCandy = candyMachine.getCandyName(stringBuilder.whatIsTheIndexOfName(candyMachine.getCandyNames(), scannerString));
             System.out.println("Please enter the amount of pennies");
             System.out.print(" > ");
-            int pennies = Integer.parseInt(scan.next());
+            int pennies = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of nickels");
             System.out.print(" > ");
-            int nickels = Integer.parseInt(scan.next());
+            int nickels = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of dimes");
             System.out.print(" > ");
-            int dimes = Integer.parseInt(scan.next());
+            int dimes = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of quarters");
             System.out.print(" > ");
-            int quarters = Integer.parseInt(scan.next());
+            int quarters = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
-            candyMachine.addStock(0, 9);
 
-            if (candyMachine.changePaymentModule(candyMachine.getPrice(stringBuilder.whatIsTheIndexOfName(candyMachine.getCandyNames(), scannerString)), pennies, nickels, dimes, quarters, false) == -1)
+            if (candyMachine.changePaymentModule(candyMachine.getPrice(stringBuilder.whatIsTheIndexOfName(candyMachine.getCandyNames(), scannerString)), pennies, nickels, dimes, quarters, false) != -1)
             {
                 if (candyMachine.buy(stringBuilder.whatIsTheIndexOfName(candyMachine.getCandyNames(), scannerString)))
                 {
@@ -138,6 +137,7 @@ public class SnackBar
             runCandyMachine();
         }
 
+        waitInSeconds(5);
         runCandyMachine();
 
     }
@@ -150,7 +150,7 @@ public class SnackBar
         System.out.println(stringBuilder.doubleArrayToString(sodaMachine.getPrices(), "$", true));
         System.out.println(stringBuilder.doubleArrayToString(sodaMachine.getTemperatures(), "°F", false));
         System.out.print(" > ");
-        String scannerString = scan.next();
+        String scannerString = scan.next().trim();
 
         if (scannerString.equalsIgnoreCase("exit"))
         {
@@ -163,31 +163,31 @@ public class SnackBar
             String nameOfSoda = sodaMachine.getSodaName(stringBuilder.whatIsTheIndexOfName(sodaMachine.getSodaNames(), scannerString));
             System.out.println("Please enter the amount of pennies");
             System.out.print(" > ");
-            int pennies = Integer.parseInt(scan.next());
+            int pennies = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of nickels");
             System.out.print(" > ");
-            int nickels = Integer.parseInt(scan.next());
+            int nickels = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of dimes");
             System.out.print(" > ");
-            int dimes = Integer.parseInt(scan.next());
+            int dimes = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of quarters");
             System.out.print(" > ");
-            int quarters = Integer.parseInt(scan.next());
+            int quarters = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of $1 bills");
             System.out.print(" > ");
-            int ones = Integer.parseInt(scan.next());
+            int ones = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of $2 bills");
             System.out.print(" > ");
-            int twos = Integer.parseInt(scan.next());
+            int twos = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of $5 bills");
             System.out.print(" > ");
-            int fives = Integer.parseInt(scan.next());
+            int fives = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
 
             if (sodaMachine.payModule(sodaMachine.getPrice(stringBuilder.whatIsTheIndexOfName(sodaMachine.getSodaNames(), scannerString)), pennies, nickels, dimes, quarters, ones, twos, fives, false) != -1)
@@ -217,6 +217,7 @@ public class SnackBar
             waitInSeconds(2);
             runSodaMachine();
         }
+        waitInSeconds(5);
         runSodaMachine();
     }
 
@@ -227,7 +228,7 @@ public class SnackBar
         System.out.println(stringBuilder.arrayToString(snackMachine.getSnackNames()));
         System.out.println(stringBuilder.doubleArrayToString(snackMachine.getPrices(), "$", true));
         System.out.print(" > ");
-        String scannerString = scan.next();
+        String scannerString = scan.next().trim();
 
         if (scannerString.equalsIgnoreCase("exit"))
         {
@@ -240,31 +241,31 @@ public class SnackBar
             String nameOfSnack = snackMachine.getSnackName(stringBuilder.whatIsTheIndexOfName(snackMachine.getSnackNames(), scannerString));
             System.out.println("Please enter the amount of pennies");
             System.out.print(" > ");
-            int pennies = Integer.parseInt(scan.next());
+            int pennies = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of nickels");
             System.out.print(" > ");
-            int nickels = Integer.parseInt(scan.next());
+            int nickels = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of dimes");
             System.out.print(" > ");
-            int dimes = Integer.parseInt(scan.next());
+            int dimes = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of quarters");
             System.out.print(" > ");
-            int quarters = Integer.parseInt(scan.next());
+            int quarters = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of $1 bills");
             System.out.print(" > ");
-            int ones = Integer.parseInt(scan.next());
+            int ones = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of $2 bills");
             System.out.print(" > ");
-            int twos = Integer.parseInt(scan.next());
+            int twos = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
             System.out.println("Please enter the amount of $5 bills");
             System.out.print(" > ");
-            int fives = Integer.parseInt(scan.next());
+            int fives = Integer.parseInt(scan.next().trim());
             clearTypingSpace();
 
             if (snackMachine.payModule(snackMachine.getPrice(stringBuilder.whatIsTheIndexOfName(snackMachine.getSnackNames(), scannerString)), pennies, nickels, dimes, quarters, ones, twos, fives, false) != -1)
@@ -293,6 +294,7 @@ public class SnackBar
             waitInSeconds(2);
             runSnackMachine();
         }
+        waitInSeconds(5);
         runSnackMachine();
     }
 
@@ -300,7 +302,7 @@ public class SnackBar
     {
         clearTypingSpace();
         System.out.print("[ADMIN] Please select a machine to edit stock or prices. Available Types are Candy, Soda, and Snack: ");
-        String scannerString = scan.next();
+        String scannerString = scan.next().trim();
         if (scannerString.equalsIgnoreCase("candy") || scannerString.equalsIgnoreCase("soda") || scannerString.equalsIgnoreCase("snack") || scannerString.equalsIgnoreCase("exit"))
         {
             if (scannerString.equalsIgnoreCase("exit"))
@@ -312,24 +314,24 @@ public class SnackBar
             {
                 clearTypingSpace();
                 System.out.println("[ADMIN] Please select a settings. setPrice or addStock");
-                String adminSelector = scan.next();
+                String adminSelector = scan.next().trim();
                 if (adminSelector.equalsIgnoreCase("setPrice"))
                 {
                     System.out.println(stringBuilder.arrayToString(candyMachine.getCandyNames()));
                     System.out.print("[ADMIN] Please enter the desired slot number for the item you wish to update price: ");
-                    int index = Integer.parseInt(scan.next());
+                    int index = Integer.parseInt(scan.next().trim());
                     clearTypingSpace();
                     System.out.print("[ADMIN] Please enter the desired price to update: ");
-                    double itemPrice = Double.parseDouble(scan.next());
+                    double itemPrice = Double.parseDouble(scan.next().trim());
                     candyMachine.setPrice(itemPrice, index);
                 } else if (adminSelector.equalsIgnoreCase("addStock"))
                 {
                     System.out.println(stringBuilder.arrayToString(candyMachine.getCandyNames()));
                     System.out.print("[ADMIN] Please enter the desired slot number for the item you wish to add stock: ");
-                    int index = Integer.parseInt(scan.next());
+                    int index = Integer.parseInt(scan.next().trim());
                     clearTypingSpace();
                     System.out.print("[ADMIN] Please enter the amount of stock to add: ");
-                    int itemQuantity = Integer.parseInt(scan.next());
+                    int itemQuantity = Integer.parseInt(scan.next().trim());
                     candyMachine.addStock(index, itemQuantity);
                 } else
                 {
@@ -342,24 +344,24 @@ public class SnackBar
             {
                 clearTypingSpace();
                 System.out.println("[ADMIN] Please select a settings. setPrice or addStock");
-                String adminSelector = scan.next();
+                String adminSelector = scan.next().trim();
                 if (adminSelector.equalsIgnoreCase("setPrice"))
                 {
                     System.out.println(stringBuilder.arrayToString(sodaMachine.getSodaNames()));
                     System.out.print("[ADMIN] Please enter the desired slot number for the item you wish to update price: ");
-                    int index = Integer.parseInt(scan.next());
+                    int index = Integer.parseInt(scan.next().trim());
                     clearTypingSpace();
                     System.out.print("[ADMIN] Please enter the desired price to update: ");
-                    double itemPrice = Double.parseDouble(scan.next());
+                    double itemPrice = Double.parseDouble(scan.next().trim());
                     sodaMachine.setPrice(index, itemPrice);
                 } else if (adminSelector.equalsIgnoreCase("addStock"))
                 {
                     System.out.println(stringBuilder.arrayToString(sodaMachine.getSodaNames()));
                     System.out.print("[ADMIN] Please enter the desired slot number for the item you wish to add stock: ");
-                    int index = Integer.parseInt(scan.next());
+                    int index = Integer.parseInt(scan.next().trim());
                     clearTypingSpace();
                     System.out.print("[ADMIN] Please enter the amount of stock to add: ");
-                    int itemQuantity = Integer.parseInt(scan.next());
+                    int itemQuantity = Integer.parseInt(scan.next().trim());
                     sodaMachine.addStock(index, itemQuantity);
                 } else
                 {
@@ -372,24 +374,24 @@ public class SnackBar
             {
                 clearTypingSpace();
                 System.out.println("[ADMIN] Please select a settings: [setPrice or addStock]");
-                String adminSelector = scan.next();
+                String adminSelector = scan.next().trim();
                 if (adminSelector.equalsIgnoreCase("setPrice"))
                 {
                     System.out.println(stringBuilder.arrayToString(snackMachine.getSnackNames()));
                     System.out.print("[ADMIN] Please enter the desired slot number for the item you wish to update price: ");
-                    int index = Integer.parseInt(scan.next());
+                    int index = Integer.parseInt(scan.next().trim());
                     clearTypingSpace();
                     System.out.print("[ADMIN] Please enter the desired price to update: ");
-                    double itemPrice = Double.parseDouble(scan.next());
+                    double itemPrice = Double.parseDouble(scan.next().trim());
                     snackMachine.setPrice(itemPrice, index);
                 } else if (adminSelector.equalsIgnoreCase("addStock"))
                 {
                     System.out.println(stringBuilder.arrayToString(snackMachine.getSnackNames()));
                     System.out.print("[ADMIN] Please enter the desired slot number for the item you wish to add stock: ");
-                    int index = Integer.parseInt(scan.next());
+                    int index = Integer.parseInt(scan.next().trim());
                     clearTypingSpace();
                     System.out.print("[ADMIN] Please enter the amount of stock to add: ");
-                    int itemQuantity = Integer.parseInt(scan.next());
+                    int itemQuantity = Integer.parseInt(scan.next().trim());
                     snackMachine.addStock(index, itemQuantity);
                 } else
                 {
@@ -405,6 +407,7 @@ public class SnackBar
                 manager();
             }
         }
+        waitInSeconds(5);
         manager();
     }
 }

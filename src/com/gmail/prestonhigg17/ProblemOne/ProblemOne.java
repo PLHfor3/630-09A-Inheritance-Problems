@@ -7,7 +7,7 @@ import com.gmail.prestonhigg17.ProblemOne.API.Person;
 
 import java.util.ArrayList;
 
-public class Executer
+public class ProblemOne
 {
     public static void problemOne()
     {
