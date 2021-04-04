@@ -22,6 +22,7 @@ public class Main
 
     public static void run()
     {
+        clearTypingSpace();
         System.out.println("Please type the number of the program you want to run:");
         System.out.println("1. Child Care Database");
         System.out.println("2. Tickets for a Theatre");
